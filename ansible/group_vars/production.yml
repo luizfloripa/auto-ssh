@@ -1,0 +1,6 @@
+---
+#####################
+###### GLOBAL #######
+#####################
+dev_user: "devsprod"
+dev_groups: "devs,sudo"

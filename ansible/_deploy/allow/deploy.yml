@@ -1,0 +1,16 @@
+- name: Allow SSH keys
+  hosts: all
+  become: true
+  roles:
+    - name: "{{ playbook_dir }}/../../roles/allow-ssh"    
+  pre_tasks:
+    - name: Load vars staging
+      include_vars:
+        file: '../../group_vars/staging.yml'
+      tags:
+        - staging
+    - name: Load vars for production env
+      include_vars:
+        file: '../../group_vars/production.yml'
+      tags:
+        - production

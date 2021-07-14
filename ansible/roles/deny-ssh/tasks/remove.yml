@@ -1,0 +1,17 @@
+---
+
+- name: "Remove key from {{ dev_user }} account"
+  authorized_key:
+    user: "{{ dev_user }}"
+    state: absent
+    key: "{{ lookup('file', key_path ) }}"
+  tags: 
+  - file
+
+- name: "Remove key from {{ dev_user }} account"
+  authorized_key:
+    user: "{{ dev_user }}"
+    state: absent
+    key: "{{ key_path }}"
+  tags: 
+  - url  
